@@ -28,6 +28,7 @@ public class MainController {
         docxFile = fileChooser.showOpenDialog(stage);
 
         if (docxFile != null) {
+            centerPanel.updateMessage("Converting...", false);
             // show spinner
             ProgressIndicator progress = centerPanel.getProgressIndicator();
             progress.setVisible(true);
@@ -41,7 +42,9 @@ public class MainController {
 
             task.setOnSucceeded(event -> {
                 String finalHtml = task.getValue();
-                centerPanel.getMessageLabel().setText("The chosen file: " + docxFile.getName());
+
+                centerPanel.updateMessage("The chosen file: " + docxFile.getName(), true);
+
                 centerPanel.getTextArea().setText(finalHtml);
 
                 progress.setVisible(false); // hide spinner

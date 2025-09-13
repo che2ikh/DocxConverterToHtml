@@ -65,6 +65,31 @@
     -fx-scale-y: 0.98;
 }
 
+/* Icon Styles */
+.button-icon {
+    -fx-icon-color: white;
+    -fx-icon-size: 16px;
+}
+
+.label-icon {
+    -fx-icon-color: rgba(255, 255, 255, 0.9);
+    -fx-icon-size: 16px;
+}
+
+/* Progress indicator with icon style */
+.progress-indicator .ikonli-font-icon {
+    -fx-icon-color: #8E54E9;
+}
+
+/* Optional: Different icon colors for different states */
+.button:hover .button-icon {
+    -fx-icon-color: #ffffff;
+}
+
+.button:pressed .button-icon {
+    -fx-icon-color: #e0e0e0;
+}
+
 /* Text Area Styling */
 .text-area {
     -fx-background-color: #2a2a3a;
