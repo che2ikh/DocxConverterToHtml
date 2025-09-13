@@ -25,8 +25,8 @@ public class CenterPanel extends VBox {
         messageIcon.getStyleClass().add("label-icon");
         message.setGraphic(messageIcon);
         message.setGraphicTextGap(10); // Space between icon and text
-g
-        textArea = new TextArea();
+        
+                textArea = new TextArea();
         textArea.setWrapText(true);
         textArea.setEditable(false);
         textArea.getStyleClass().add("converter-text-area");
