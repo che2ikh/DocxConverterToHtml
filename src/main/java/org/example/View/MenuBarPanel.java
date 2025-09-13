@@ -12,8 +12,7 @@ public class MenuBarPanel extends HBox {
 
     public MenuBarPanel(MainController controller) {
         super(10); // spacing
-        this.setStyle("-fx-padding: 10; -fx-alignment: center; -fx-background-color: rgba(255,255,255,0.1);");
-
+        this.getStyleClass().add("menu-bar-panel");
         chooseFileButton = new Button("Choose and Convert");
         chooseFileButton.setOnAction(e->controller.openFileChooser());
 

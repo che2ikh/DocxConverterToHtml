@@ -25,14 +25,15 @@ public class CenterPanel extends VBox {
         textArea = new TextArea();
         textArea.setWrapText(true);
         textArea.setEditable(false);
+        textArea.getStyleClass().add("converter-text-area");
+
         progressIndicator = new ProgressIndicator();
         progressIndicator.setVisible(false); // hidden by default
 
         stackPane = new StackPane(textArea, progressIndicator);
 
-        this.setStyle("-fx-padding: 10; -fx-background-color: rgba(255,255,255,0.05); -fx-border-radius: 12; -fx-background-radius: 12;");
-
-        textArea.setStyle("-fx-background-color: rgba(255,255,255,0.9); -fx-text-fill: #333; -fx-font-family: Consolas, monospace; -fx-font-size: 13px; -fx-background-radius: 12;");
+        this.getStyleClass().add("center-panel");
+        message.getStyleClass().add("message-label");
 
         this.getChildren().addAll(message, stackPane);
     }

@@ -1,49 +1,296 @@
-/* styles.css */
+/* styles.css - Modern Dark Theme with Glassmorphism Effects - FINAL */
 
-/* Root VBox */
 .root {
-    -fx-background-color: linear-gradient(to bottom, #1e3c72, #2a5298);
-    -fx-padding: 15;
-    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+    -fx-padding: 0;
+    -fx-font-family: "Segoe UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Menu buttons */
+/* Glassmorphism effect for main container */
+.vbox {
+    -fx-background-color: transparent;
+    -fx-padding: 20;
+    -fx-spacing: 20;
+}
+
+/* MenuBarPanel - Top toolbar with glass effect */
+.menu-bar-panel {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 5);
+    -fx-border-color: rgba(255, 255, 255, 0.15);
+    -fx-border-width: 1;
+    -fx-background-insets: 0;
+    -fx-alignment: center;
+    -fx-margin: 10 0 0 0;
+}
+
+/* CenterPanel - Content area with glass effect */
+.center-panel {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 5);
+    -fx-border-color: rgba(255, 255, 255, 0.1);
+    -fx-border-width: 1;
+    -fx-spacing: 15;
+    -fx-pref-height: 400;
+}
+
+/* Modern buttons with gradient and hover effects */
 .button {
-    -fx-background-color: linear-gradient(to right, #ff7e5f, #feb47b);
+    -fx-background-color: linear-gradient(to right, #4776E6, #8E54E9);
     -fx-text-fill: white;
     -fx-font-size: 14px;
-    -fx-font-weight: bold;
-    -fx-background-radius: 12;
+    -fx-font-weight: 600;
+    -fx-background-radius: 10;
     -fx-cursor: hand;
-    -fx-padding: 8 20 8 20;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 2);
+    -fx-padding: 12 25 12 25;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 8, 0, 0, 2);
     -fx-border-color: transparent;
-    -fx-transition: all 0.2s ease-in-out;
 }
 
 .button:hover {
-    -fx-background-color: linear-gradient(to right, #feb47b, #ff7e5f);
-    -fx-scale-x: 1.05;
-    -fx-scale-y: 1.05;
+    -fx-background-color: linear-gradient(to right, #5c85ee, #9d68ec);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 10, 0, 0, 4);
 }
 
-/* Center Panel */
+.button:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* Text Area Styling */
 .text-area {
-    -fx-background-color: rgba(255, 255, 255, 0.9);
-    -fx-text-fill: #333;
-    -fx-font-size: 13px;
-    -fx-font-family: "Consolas", monospace;
+    -fx-background-color: #2a2a3a;
+    -fx-text-fill: #cccccc;
+    -fx-font-size: 14px;
+    -fx-font-family: "Consolas", "Fira Code", "SF Mono", monospace;
     -fx-border-radius: 10;
     -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-highlight-fill: #4776E6;
+    -fx-pref-height: 300;
+    -fx-min-height: 300;
+}
+
+.text-area .content {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10;
+}
+
+.text-area .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-bar:vertical .track {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 5;
+}
+
+.text-area .scroll-bar:vertical .thumb {
+    -fx-background-color: rgba(200, 200, 200, 0.4);
+    -fx-background-radius: 5;
+}
+
+.text-area .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: rgba(220, 220, 220, 0.6);
+}
+
+.text-area .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-bar:horizontal .track {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 5;
+}
+
+.text-area .scroll-bar:horizontal .thumb {
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+    -fx-background-radius: 5;
+}
+
+.text-area .selection {
+    -fx-fill: #5c85ee;
+}
+
+.text-area:focused {
+    -fx-border-color: rgba(113, 86, 217, 0.6);
+    -fx-effect: dropshadow(three-pass-box, rgba(113, 86, 217, 0.2), 10, 0, 0, 0);
+}
+
+/* Label Styling */
+.label {
+    -fx-text-fill: rgba(255, 255, 255, 0.9);
+    -fx-font-size: 16px;
+    -fx-font-weight: 500;
+}
+
+/* Custom class for the message label */
+.message-label {
+    -fx-text-fill: rgba(255, 255, 255, 0.95);
+    -fx-font-size: 18px;
+    -fx-font-weight: 600;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 4, 0, 0, 1);
+    -fx-padding: 0 0 5 0;
+}
+
+/* Progress Indicator */
+.progress-indicator {
+    -fx-progress-color: #8E54E9;
+    -fx-accent: #8E54E9;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 50px;
+}
+
+.progress-indicator .indicator {
+    -fx-background-color: transparent;
+}
+
+.progress-indicator .spinner {
+    -fx-border-color: derive(-fx-progress-color, 50%);
+}
+
+/* StackPane styling to center progress indicator */
+.stack-pane {
+    -fx-alignment: center;
+}
+
+/* Specific text area class */
+.converter-text-area {
+    -fx-background-color: #2a2a3a !important;
+    -fx-text-fill: #bbbbbb !important;
+    -fx-font-size: 14px;
+    -fx-font-family: "Consolas", monospace;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 12;
+    -fx-highlight-fill: #4a77d4;
+}
+
+.converter-text-area .content {
+    -fx-background-color: transparent !important;
+    -fx-text-fill: #bbbbbb !important;
+}
+
+/* Alert dialog styling - MODERNIZED */
+.dialog-pane {
+    -fx-background-color: #1a1a2e;
+    -fx-background-radius: 15;
+    -fx-border-color: rgba(113, 86, 217, 0.3);
+    -fx-border-width: 1;
+    -fx-border-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 15, 0, 0, 5);
     -fx-padding: 10;
 }
 
-.label {
-    -fx-text-fill: #ffffff;
-    -fx-font-size: 16px;
-    -fx-font-weight: bold;
+.dialog-pane > .content.label {
+    -fx-text-fill: #d8d8d8;
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-padding: 15 10 15 10;
 }
 
-.progress-indicator {
-    -fx-progress-color: #ff7e5f;
+.dialog-pane .header-panel {
+    -fx-background-color: #1e1e2e;
+    -fx-background-radius: 15 15 0 0;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 15 10 15;
+}
+
+.dialog-pane .button-bar {
+    -fx-background-color: transparent;
+    -fx-padding: 15 10 10 10;
+}
+
+.dialog-pane .button-bar .container {
+    -fx-alignment: center;
+}
+
+.dialog-pane .button-bar .button {
+    -fx-background-color: linear-gradient(to right, #4776E6, #8E54E9);
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+    -fx-background-radius: 8;
+    -fx-padding: 8 20 8 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);
+    -fx-cursor: hand;
+}
+
+.dialog-pane .button-bar .button:hover {
+    -fx-background-color: linear-gradient(to right, #5c85ee, #9d68ec);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.dialog-pane .button-bar .button:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* Specific alert type styling */
+.alert.error .dialog-pane {
+    -fx-border-color: rgba(255, 87, 87, 0.4);
+}
+
+.alert.error .dialog-pane .header-panel {
+    -fx-background-color: #2e1a1a;
+}
+
+.alert.warning .dialog-pane {
+    -fx-border-color: rgba(255, 193, 87, 0.4);
+}
+
+.alert.warning .dialog-pane .header-panel {
+    -fx-background-color: #2e2a1a;
+}
+
+.alert.information .dialog-pane {
+    -fx-border-color: rgba(87, 87, 255, 0.4);
+}
+
+.alert.information .dialog-pane .header-panel {
+    -fx-background-color: #1a1e2e;
+}
+
+.alert.confirmation .dialog-pane {
+    -fx-border-color: rgba(87, 255, 87, 0.4);
+}
+
+.alert.confirmation .dialog-pane .header-panel {
+    -fx-background-color: #1a2e1a;
+}
+
+.dialog-pane .graphic-container {
+    -fx-padding: 10 15 10 10;
+}
+
+.dialog-pane .glass-pane {
+    -fx-background-color: transparent;
+}
+
+/* File chooser styling (optional) */
+.file-chooser {
+    -fx-background-color: #1a1a2e;
+}
+
+.file-chooser .directory-list-view, .file-chooser .list-view {
+    -fx-background-color: #2a2a3a;
+    -fx-text-fill: #cccccc;
 }
